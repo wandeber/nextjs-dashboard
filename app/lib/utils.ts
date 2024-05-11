@@ -7,6 +7,13 @@ export const formatCurrency = (amount: number) => {
   });
 };
 
+export function clientAction(cb: (...args: any) => any) {
+	return function (...args: any) {
+		'use client';
+		return cb(...args);
+	}
+}
+
 export const formatDateToLocal = (
   dateStr: string,
   locale: string = 'en-US',
